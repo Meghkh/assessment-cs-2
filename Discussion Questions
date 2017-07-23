@@ -1,0 +1,53 @@
+Discussion Questions
+
+Recursion
+
+1) Recursion occurs when a function calls itself within itself. It is useful
+    because you don't necessarily need to know everything about what you're
+    recursing on. Recursion can provide instances of runtime improvements, but
+    at the expense of memory because of increased use of the function call stack.
+
+2) It's necessary to have a base case to ensure that recursion won't continue
+    indefinitely. The recursion must progress towards an end point, like a while
+    loop must progress towards a terminating case. This is achieved because the base case is fundamentally different than other cases. It can be degenerate,
+    such as an empty list, at which recursion could not continue because there
+    is nothing more to recurse on. Other bases cases must be more explicit.
+
+
+Graphs
+
+1) A graph is a data structure made up of nodes and edges. Nodes contain
+    information about what other nodes they share an edge with (also said, are
+    adjacent to), meaning they are connected to one another. The information
+    about its defined relationships is stored in an adjacency list on each node.
+
+2) A tree is different than a graph in that it's nodes can only have one parent,
+    whereas nodes in a graph can have multiple parents. This also means that 
+    graphs can have cycles (directed graph), whereas trees are more structured
+    and each node can only be reached by one path. Graphs can also be define 
+    relationships (undirected).
+
+3) Because graphs are good for defining relationships, they are used for social
+    media platforms like Facebook.
+
+
+
+
+
+
+Data Structure        Index     Search     Add-R     Add-L    Pop-L   Pop-R
+Python List (Array)    O(1)      O(n)       O(1)     O(n)     O(n)    O(1)  
+Linked List (no tail)  O(n)      O(n)       O(n)     O(1)     O(1)    O(n)
+Doubly-Linked List     O(n)      O(n)       O(n)     O(1)     O(1)    O(n)
+Queue (Array)           X         X         O(1)       X      O(n)      X
+Queue (LL/DLL)          X         X         O(n)       X      O(1)      X
+Stack (Array/LL/DLL)    X         X         O(1)       X        X     O(1)
+Deque (DLL)             X         X         O(1)     O(1)     O(1)    O(1)       
+
+
+
+Data Structure          Get      Add       Delete       Iterate     Memory
+Dictionary (Hash Map)   O(1)     O(1)       O(1)          O(n)      medium
+Set (Hash Map)          O(1)     O(1)       O(1)          O(n)      medium
+Binary Search Tree     O(logn)  O(logn)    O(logn)      O(nlogn)    large
+Tree                   O(logn)             O(1)     

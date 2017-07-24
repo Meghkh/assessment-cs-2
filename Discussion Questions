@@ -45,6 +45,9 @@ Stack (Array/LL/DLL)    X         X         O(1)       X        X     O(1)
 Deque (DLL)             X         X         O(1)     O(1)     O(1)    O(1)       
 
 notes to review: how LL Add-R is O(1) (tail?), indexing for LL/DLL
+    --> because multiplication, again, just like arrays. although the nodes of a
+        LL may not be stored in contiguous memory, the references to those nodes
+        are stored in a contiguous memory array, so indexing is also O(1)
 
 
 Data Structure          Get       Add       Delete      Iterate     Memory
@@ -54,6 +57,9 @@ Binary Search Tree     O(logn)   O(logn)    O(logn)       O(n)      light
 Tree                    O(n)     O(logn)     O(1)         O(n)      light
 
 notes to review: memory, BST and tree, iteration for hashmaps
+    --> Iterating is never better than O(logn). you have to go through logn depth of tree,
+        but then it depends on how many nodes are on each level - O(n)
+
 
 
 Sorting

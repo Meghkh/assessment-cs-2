@@ -91,6 +91,8 @@ def num_nodes(tree):
         ...             self.children.append(obj)
         ...
         >>> one = Node(1)
+        >>> num_nodes(one)
+
         >>> two = Node(2)
         >>> three = Node(3)
         >>> one.add_child(two)
@@ -109,20 +111,32 @@ def num_nodes(tree):
         6
     """
 
+    to_visit = []
+    to_visit.extend(tree.children)
     to_visit = [tree]
+    # print to_visit
 
     while to_visit:
         node = to_visit.pop()
         if node.children:
             to_visit.extend(node.children)
-            for child in to_visit:
-                return 1 + num_nodes(child)
+            return 1 + num_nodes(to_visit.pop())
         else:
             return 1
+        print to_visit
+        # if node.children:
+        #     to_visit.extend(node.children)
+        #     # print to_visit
+        # #     return 1 + num_nodes(node)
+        # else:
+        #     return 1
             # if node.data:
             #     return 1
             # else:
             #     return 0
+
+    # if tree.data:
+    #     return 1
 
     # if tree.children:
     #     # to_visit.extend(tree.children)

@@ -14,7 +14,17 @@ def print_item(my_list, i=0):
         >>> print_item([])
 
     """
-    pass
+
+    # check if the list is empty
+    # if it is return
+    # otherwise print item and call my_list on remaining slice of list
+
+    if my_list:
+        print my_list[i]
+        print_item(my_list[i+1:])
+    else:
+        return
+
 
 
 # 2. Write a function that uses recursion to print each node in a tree.
@@ -41,7 +51,12 @@ def print_all_tree_data(tree):
         3
 
     """
-    pass
+
+    print tree.data
+
+    if tree.children:
+        for node in tree.children:
+            print_all_tree_data(node)
 
 # 3. Write a function that uses recursion to find the length of a list.
 
@@ -52,7 +67,15 @@ def list_length(my_list):
         4
 
     """
-    pass
+
+    # making a counter and updating it won't work because of scope, must use
+    # python addition to keep count with function calls (parameter won't work either)
+
+    if my_list:
+        return 1 + list_length(my_list[1:])
+    else:
+        return 0
+
 
 
 # 4. Write a function that uses recursion to count how many nodes are in a tree.
@@ -86,7 +109,53 @@ def num_nodes(tree):
         6
     """
 
-    pass
+    to_visit = [tree]
+
+    while to_visit:
+        node = to_visit.pop()
+        if node.children:
+            to_visit.extend(node.children)
+            for child in to_visit:
+                return 1 + num_nodes(child)
+        else:
+            return 1
+            # if node.data:
+            #     return 1
+            # else:
+            #     return 0
+
+    # if tree.children:
+    #     # to_visit.extend(tree.children)
+    #     # print to_visit
+    #     for node in tree.children:
+    #         if node.children:
+    #             to_visit.extend(node.children)
+    #             return 1 + num_nodes(node)
+    #         else:
+    #             # return 1 + num_nodes(node)
+    #             return 1 + num_nodes(node)
+
+    # else:
+    #     if tree.data:
+    #         return 1
+    #     else:
+    #         return 0
+
+        # if to_visit:
+    #         for node in to_visit:
+    #             if node.children:
+    #                 print to_visit
+    #                 return 1 + num_nodes(to_visit[:-1])
+    #             else:
+    #                 return 1
+                    # return 1 + num_nodes(to_visit)
+                    # to_visit.extend(node.children)
+                    # return 1 + num_nodes(node.children[:-1])
+            # else:
+            #     if tree.data:
+            #         return 1
+            #     else:
+            #         return 0
 
 #####################################################################
 # END OF ASSIGNMENT: You can ignore everything below.

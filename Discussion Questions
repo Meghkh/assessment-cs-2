@@ -9,9 +9,11 @@ Recursion
 
 2) It's necessary to have a base case to ensure that recursion won't continue
     indefinitely. The recursion must progress towards an end point, like a while
-    loop must progress towards a terminating case. This is achieved because the base case is fundamentally different than other cases. It can be degenerate,
-    such as an empty list, at which recursion could not continue because there
-    is nothing more to recurse on. Other bases cases must be more explicit.
+    loop must progress towards a terminating case. This is achieved because the
+    base case is fundamentally different than other cases. The base case can be
+    degenerate, such as an empty list, at which point recursion could not
+    continue because there is nothing more to recurse on. Other bases cases must
+    be more explicit.
 
 
 Graphs
@@ -56,8 +58,28 @@ notes to review: memory, BST and tree, iteration for hashmaps
 
 Sorting
 
-1. Describe Bubble Sort
-2. Describe Merge Sort
-3. Describe Quick Sort
+1. In each iteration, bubble sort will drag the largest item found and move it
+    to the end of the list. Then the same thing happens to the remaining list,
+    minus the element just sorted. This ensures that each time the next largest
+    element is sorted. If an iteration occurs where no swaps take place, then
+    the list is sorted and can be returned without verifying the order of the
+    remaining elements.
 
+2. Merge sort will sort two sorted lists. Given a list, merge sort will
+    recursively slice the list into two at it's midpoint and  continue to slice
+    the produced lists into halves until it reaches it's base case, at which a
+    list's length is one zero or empty. This is the base case because an empty 
+    list or a list of one element is sorted. Then it reconstructs the sorted 
+    lists by comparing the first element in each list and adding them in sorted
+    order to the new list.
+
+
+3. Like merge sort, quick sort begins by finding the midpoint of the list,
+    assuming a list greater than 0 or 1 (base case, same as in merge sort). Then
+    quicksort arranges the remaining elements in the list into new lists based
+    on whether their values are higher than, lower than or equivalent than the
+    midpoint, refered to as a pivot. The list of items with equivalent value to
+    the pivot are sorted, so quick sort is recursively called on the lower list
+    and the higher list for each of those to be sorted. Then the lists are 
+    combined in order.
 

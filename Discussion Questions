@@ -31,23 +31,33 @@ Graphs
     media platforms like Facebook.
 
 
-
-
-
+Performance of Different Data Structures
 
 Data Structure        Index     Search     Add-R     Add-L    Pop-L   Pop-R
 Python List (Array)    O(1)      O(n)       O(1)     O(n)     O(n)    O(1)  
-Linked List (no tail)  O(n)      O(n)       O(n)     O(1)     O(1)    O(n)
-Doubly-Linked List     O(n)      O(n)       O(n)     O(1)     O(1)    O(n)
+Linked List            O(n)      O(n)       O(1)     O(1)     O(1)    O(n)
+Doubly-Linked List     O(n)      O(n)       O(1)     O(1)     O(1)    O(1)
 Queue (Array)           X         X         O(1)       X      O(n)      X
-Queue (LL/DLL)          X         X         O(n)       X      O(1)      X
+Queue (LL/DLL)          X         X         O(1)       X      O(1)      X
 Stack (Array/LL/DLL)    X         X         O(1)       X        X     O(1)
 Deque (DLL)             X         X         O(1)     O(1)     O(1)    O(1)       
 
+notes to review: how LL Add-R is O(1) (tail?), indexing for LL/DLL
 
 
-Data Structure          Get      Add       Delete       Iterate     Memory
-Dictionary (Hash Map)   O(1)     O(1)       O(1)          O(n)      medium
-Set (Hash Map)          O(1)     O(1)       O(1)          O(n)      medium
-Binary Search Tree     O(logn)  O(logn)    O(logn)      O(nlogn)    large
-Tree                   O(logn)             O(1)     
+Data Structure          Get       Add       Delete      Iterate     Memory
+Dictionary (Hash Map)   O(1)      O(1)       O(1)       O(nlogn)    medium
+Set (Hash Map)          O(1)      O(1)       O(1)       O(nlogn)    medium
+Binary Search Tree     O(logn)   O(logn)    O(logn)       O(n)      light
+Tree                    O(n)     O(logn)     O(1)         O(n)      light
+
+notes to review: memory, BST and tree, iteration for hashmaps
+
+
+Sorting
+
+1. Describe Bubble Sort
+2. Describe Merge Sort
+3. Describe Quick Sort
+
+
